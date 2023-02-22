@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Header from "./components/Header";
 import Post from "./components/Post";
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
 
   return (
     <div>
+      <Header />
       {posts.map((post) => (
         <Post
           key={post.data.id}
