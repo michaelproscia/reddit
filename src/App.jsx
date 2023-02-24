@@ -23,16 +23,18 @@ function App() {
   return (
     <div>
       <Header setIsOpen={setIsOpen} />
-      <div className="flex justify-center relative">
+      <div className="flex justify-center">
         <div className="mx-4">
           {posts.map((post) => (
             <Post
               key={post.data.id}
+              subredditName={post.data.subreddit_name_prefix}
               title={post.data.title}
               score={post.data.score}
               author={post.data.author}
               numComments={post.data.num_comments}
               created={post.data.created_utc}
+              postImage={post.data.url_overridden_by_dest}
             />
           ))}
         </div>
