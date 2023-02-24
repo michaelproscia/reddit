@@ -36,7 +36,7 @@ function Post({ title, score, author, numComments, created }) {
     return "just now";
   }
   return (
-    <div className="flex flex-col items-center text-center gap-4 mb-8 border max-w-6xl m-auto shadow shadow-slate-500 p-5 xl:p-2">
+    <div className="flex flex-col items-center text-center gap-4 mb-8 border max-w-lg m-auto shadow shadow-slate-500 p-5 xl:p-2 xl:max-w-6xl">
       <h4 className="font-bold text-xl">{title}</h4>
       <img src="" alt="" />
       <div className="flex justify-between w-full">

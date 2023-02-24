@@ -1,6 +1,18 @@
-function SubredditNav() {
+function SubredditNav({ subreddits }) {
   return (
-    <div className="h-96 w-96 bg-red-600 absolute right-2 top-14">Hello</div>
+    <div className="h-96 w-96 absolute right-2 top-14">
+      <h2 className="text-xl font-bold mb-2">Subreddits</h2>
+      {subreddits.map((subreddit) => (
+        <div key={subreddit.data.id} className="text-lg mb-2 ">
+          <img
+            src={subreddit.data.icon_img}
+            alt=""
+            className="h-8 rounded-2xl inline mr-2"
+          />
+          {subreddit.data.display_name_prefixed}
+        </div>
+      ))}
+    </div>
   );
 }
 
