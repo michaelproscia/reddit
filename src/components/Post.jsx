@@ -1,3 +1,8 @@
+import comment from "../assets/comment.svg";
+import clock from "../assets/clock.svg";
+import user from "../assets/user.svg";
+import upvote from "../assets/upvote.svg";
+
 function Post({
   title,
   score,
@@ -44,15 +49,27 @@ function Post({
     return "just now";
   }
   return (
-    <div className="flex flex-col items-center text-center gap-4 mb-8 border max-w-lg m-auto shadow shadow-slate-500 p-5 xl:p-2 xl:max-w-6xl">
+    <div className="flex flex-col items-center text-center gap-4 mb-8 m-auto shadow shadow-slate-500 p-5 xl:p-2 xl:max-w-6xl">
       <h4 className="font-bold text-xl">{title}</h4>
       <h5>{subredditName}</h5>
-      {/*postImage && <img src={postImage} className="object-cover" alt="" />*/}
-      <div className="flex justify-between w-full">
-        <p>{score}</p>
-        <p>{author}</p>
-        <p>{convertUTC(created)}</p>
-        <p>{numComments}</p>
+      {/*{post_image && <img className="object-cover" src={post_image} alt="" />}*/}
+      <div className="flex w-full justify-between">
+        <div className="flex items-center gap-1">
+          <img className="h-3" src={upvote} alt="" />
+          <p className="text-xs md:text-sm">{score}</p>
+        </div>
+        <div className="flex items-center gap-1">
+          <img className="h-3" src={user} alt="" />
+          <p className="text-xs md:text-sm">{author}</p>
+        </div>
+        <div className="flex items-center gap-1">
+          <img className="h-3" src={clock} alt="" />
+          <p className="text-xs md:text-sm">{convertUTC(created)}</p>
+        </div>
+        <div className="flex items-center gap-1">
+          <img src={comment} alt="" />
+          <p className="text-xs md:text-sm">{numComments}</p>
+        </div>
       </div>
     </div>
   );

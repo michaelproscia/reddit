@@ -1,20 +1,19 @@
-import SubredditNav from "./SubredditNav";
 import DarkMode from "./DarkMode";
-import hamburger from "../assets/hamburger.svg";
-import { useState, useEffect } from "react";
+import hamburger from "../assets/hamburgerMenu.svg";
+import UserAccount from "./UserAccount";
 
 function Header({ setIsOpen }) {
   return (
-    <header className="bg-slate-700 p-3 flex justify-between items-center mb-4 px-10">
+    <header className="bg-slate-700 p-3 flex justify-between items-center px-10">
       <h1 className="text-white font-bold text-2xl">
         Reddit<span className="text-blue-300">Lite</span>
       </h1>
-      <div className="flex items-center gap-6">
+      <div className="flex gap-3 items-center">
         <DarkMode />
-
+        <UserAccount />
         <img
           src={hamburger}
-          className="p-3 bg-white rounded max-h-12 shadow shadow-slate-500 hover:bg-slate-200 hover:cursor-pointer"
+          className="max-h-8 hover:cursor-pointer hover:bg-slate-800"
           onClick={() => setIsOpen((prev) => !prev)}
         />
       </div>
