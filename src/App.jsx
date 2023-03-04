@@ -7,7 +7,9 @@ function App() {
   const [posts, setPosts] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
   const [subreddits, setSubreddits] = useState([]);
-  const [darkMode, setDarkMode] = useState("light");
+  const [darkMode, setDarkMode] = useState(
+    localStorage?.getItem("theme") || "light"
+  );
 
   useEffect(() => {
     fetch("https://www.reddit.com/r/popular.json")
@@ -24,9 +26,11 @@ function App() {
   useEffect(() => {
     if (darkMode === "light") {
       document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", "light");
     }
     if (darkMode === "dark") {
       document.documentElement.classList.add("dark");
+      localStorage.setItem("theme", "dark");
     }
   }, [darkMode]);
 
