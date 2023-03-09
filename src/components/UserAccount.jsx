@@ -1,6 +1,14 @@
-function UserAccount() {
+import Reddit from "../utils/Reddit";
+function UserAccount({ user, setUser }) {
+  if (user) {
+    return (
+      <div className="cursor-pointer">
+        <img src={user.icon_img} alt="" width={80} />
+      </div>
+    );
+  }
   return (
-    <div className="cursor-pointer">
+    <div className="cursor-pointer" onClick={() => Reddit.getAuthorization()}>
       <svg
         height="28"
         viewBox="0 0 32 32"
