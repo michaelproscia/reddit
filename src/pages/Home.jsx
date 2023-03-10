@@ -26,7 +26,7 @@ function Home({ isOpen }) {
           {posts.map((post) => (
             <Post
               key={post.data.id}
-              subredditName={post.data.subreddit_name_prefix}
+              subredditName={post.data.subreddit_name_prefixed}
               title={post.data.title}
               score={post.data.score}
               author={post.data.author}
