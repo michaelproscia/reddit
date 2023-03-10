@@ -1,9 +1,8 @@
 import { useState, useEffect } from "react";
 import Post from "../components/Post";
 import SubredditNav from "../components/SubredditNav";
-import Reddit from "../utils/Reddit";
 
-function Home({ isOpen, setIsOpen }) {
+function Home({ isOpen }) {
   const [posts, setPosts] = useState([]);
   const [subreddits, setSubreddits] = useState([]);
 

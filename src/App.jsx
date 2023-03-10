@@ -40,14 +40,10 @@ function App() {
               theme={theme}
               setTheme={setTheme}
               user={user}
-              setUser={setUser}
             />
           }
         >
-          <Route
-            index
-            element={<Home isOpen={isOpen} setIsOpen={setIsOpen} />}
-          />
+          <Route index element={<Home isOpen={isOpen} />} />
           <Route path="/:subreddit" element={<Subreddit />} />
           <Route path="/dashboard" element={<Dashboard />} />
         </Route>

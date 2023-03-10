@@ -1,4 +1,5 @@
-const SCOPE = "identity";
+const SCOPE =
+  "identity account edit flair history modconfig modflair modlog modposts modwiki mysubreddits privatemessages read report save submit subscribe vote wikiedit wikiread";
 const REDIRECT_URI = "http://127.0.0.1:5173";
 const RANDOM_STRING = "poop";
 const RESPONSE_TYPE = "token";
@@ -34,6 +35,10 @@ const Reddit = {
         Authorization: `Bearer ${accessToken}`,
       },
     });
+  },
+  getSubReddit() {
+    const accessToken = this.getAccessToken();
+    return fetch("https://www.reddit.com/r/ProgrammerHumor.json");
   },
 };
 

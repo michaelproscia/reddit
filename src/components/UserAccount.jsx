@@ -1,5 +1,5 @@
 import Reddit from "../utils/Reddit";
-function UserAccount({ user, setUser }) {
+function UserAccount({ user }) {
   if (user) {
     return (
       <div className="cursor-pointer">

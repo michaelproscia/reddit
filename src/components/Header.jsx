@@ -3,7 +3,7 @@ import hamburger from "../assets/hamburgerMenu.svg";
 import UserAccount from "./UserAccount";
 import { Outlet } from "react-router-dom";
 
-function Header({ setIsOpen, theme, setTheme, user, setUser }) {
+function Header({ setIsOpen, theme, setTheme, user }) {
   return (
     <>
       <header className="bg-slate-700 p-3 flex justify-between items-center px-10 dark:bg-slate-900">
@@ -12,7 +12,7 @@ function Header({ setIsOpen, theme, setTheme, user, setUser }) {
         </h1>
         <div className="flex gap-3 items-center">
           <Theme theme={theme} setTheme={setTheme} />
-          <UserAccount user={user} setUser={setUser} />
+          <UserAccount user={user} />
           <img
             src={hamburger}
             className="max-h-8 hover:cursor-pointer hover:bg-slate-800"
